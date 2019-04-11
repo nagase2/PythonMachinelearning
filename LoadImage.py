@@ -6,9 +6,9 @@ import numpy as np
 import random, math
 
 #画像が保存されているルートディレクトリのパス
-root_dir = "./"
+root_dir = "./img"
 # 商品名
-categories = ["img","img2"]
+categories = ["bita","irohasu","milk"]
 
 
 # 画像データ用配列
@@ -30,8 +30,8 @@ def make_sample(files):
 def add_sample(cat, fname):
     img = Image.open(fname)
     img = img.convert("RGB")
-    img = img.resize((180, 150))
-    # print("ssssss")
+    img = img.resize((250, 250))
+    print(fname)
     # img.show()
     data = np.asarray(img)
     X.append(data)
@@ -43,13 +43,13 @@ allfiles = []
 #カテゴリ配列の各値と、それに対応するidxを認識し、全データをallfilesにまとめる
 for idx, cat in enumerate(categories):
     image_dir = root_dir + "/" + cat
-    files = glob.glob(image_dir + "/*.jpg")
+    files = glob.glob(image_dir + "/*.jpeg")
     for f in files:
         allfiles.append((idx, f))
 
 #シャッフル後、学習データと検証データに分ける
 random.shuffle(allfiles)
-th = math.floor(len(allfiles) * 0.5)
+th = math.floor(len(allfiles) * 0.2)
 train = allfiles[0:th]
 test  = allfiles[th:]
 X_train, y_train = make_sample(train)
