@@ -9,6 +9,7 @@ import random, math
 root_dir = "img"
 # 商品名
 categories = ["bita","milk","irohasu"]
+categories = ["paper_clean"]
 
 
 
