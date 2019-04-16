@@ -11,7 +11,7 @@ root_dir = "./img"
 categories = ["bita","irohasu","milk"]
 
 
-# 画像データ用配列
+# 画像データ用配列ModuleNotFoundError: No module named 'tkinter'
 X = []
 # ラベルデータ用配列
 Y = []
@@ -22,16 +22,16 @@ def make_sample(files):
     X = []
     Y = []
     for cat, fname in files:
-        add_sample(cat, fname)
+        add_sample(cat, fname.lower())
     return np.array(X), np.array(Y)
 
 #渡された画像データを読み込んでXに格納し、また、
 #画像データに対応するcategoriesのidxをY格納する関数
 def add_sample(cat, fname):
-    img = Image.open(fname)
+    img = Image.open(fname.lower())
     img = img.convert("RGB")
     img = img.resize((250, 250))
-    print(fname)
+    print("zz",fname)
     # img.show()
     data = np.asarray(img)
     X.append(data)
@@ -45,7 +45,7 @@ for idx, cat in enumerate(categories):
     image_dir = root_dir + "/" + cat
     files = glob.glob(image_dir + "/*.jpeg")
     for f in files:
-        allfiles.append((idx, f))
+        allfiles.append((idx, f.lower()))
 
 #シャッフル後、学習データと検証データに分ける
 random.shuffle(allfiles)
@@ -59,5 +59,6 @@ xy = (X_train, X_test, y_train, y_test)
 
 # print(X_train)
 np.savez_compressed("tea_data2", X_train=X_train,X_test=X_test,y_train=y_train,y_test=y_test)
+
 
 

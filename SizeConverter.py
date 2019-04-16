@@ -9,7 +9,7 @@ import random, math
 root_dir = "img"
 # 商品名
 categories = ["bita","milk","irohasu"]
-categories = ["paper_clean"]
+#categories = ["paper_clean"]
 
 
 
@@ -35,11 +35,8 @@ for idx, cat in enumerate(categories):
         hsize = int((float(img.size[1])*float(wpercent)))
         img = img.resize((basewidth,hsize), Image.ANTIALIAS)
         #同じファイル名で保存する
-        img.save(f.title())
-
-
-
-
+        img.save(f.title().lower())
+        print(f.title().lower())
 
 
 
