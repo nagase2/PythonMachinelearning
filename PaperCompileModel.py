@@ -37,7 +37,7 @@ import numpy as np
 categories = ["paper_bent","paper_clean"]
 nb_classes = len(categories)
 
-train_data = np.load("tea_data2.npz")
+train_data = np.load("paper_data.npz")
 
 X_train = train_data['X_train']
 X_test = train_data['X_test']
