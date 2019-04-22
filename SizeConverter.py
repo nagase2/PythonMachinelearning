@@ -9,9 +9,9 @@ import random, math
 root_dir = "img"
 # 商品名
 categories = ["bita","milk","irohasu"]
-#categories = ["paper_clean"]
+categories = ["paper"]
 
-
+print("start convert")
 
 #
 # # 画像データ用配列
@@ -27,7 +27,7 @@ allfiles = []
 for idx, cat in enumerate(categories):
     basewidth = 300
     image_dir = root_dir + "/" + cat
-    files = glob.glob(image_dir + "/*.jpeg")
+    files = glob.glob(image_dir + "/*.jpg")
     for f in files:
         img = Image.open(f)
         #img.show()
