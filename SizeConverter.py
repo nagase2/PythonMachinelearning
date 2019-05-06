@@ -27,7 +27,7 @@ allfiles = []
 for idx, cat in enumerate(categories):
     basewidth = 300
     image_dir = root_dir + "/" + cat
-    files = glob.glob(image_dir + "/*.jpg")
+    files = glob.glob(image_dir + "/*.jp*g")
     for f in files:
         img = Image.open(f)
         #img.show()

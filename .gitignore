@@ -1,3 +1,6 @@
 .idea
 venv/
-
+img/flower_photos/
+*.npz
+*.hdf5
+*.png
