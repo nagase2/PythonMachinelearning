@@ -3,7 +3,6 @@ from keras.models import model_from_json
 from keras.preprocessing import image
 import numpy as np
 
-
 model = model_from_json(open('flower_predict.json').read())
 
 model.load_weights('flower_predict.hdf5')
