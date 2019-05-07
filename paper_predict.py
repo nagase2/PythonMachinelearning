@@ -12,7 +12,7 @@ model.load_weights('paper_predict.hdf5')
 categories = ["paper_bent", "paper_clean"]
 
 # 画像を読み込む
-img_path = "paperpic2.jpeg"
+img_path = "paperpic.jpg"
 img = image.load_img(img_path, target_size=(300, 300, 3))
 x = image.img_to_array(img)
 x = np.expand_dims(x, axis=0)
