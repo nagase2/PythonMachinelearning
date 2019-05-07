@@ -1,3 +1,4 @@
+# predict data from input using trained model
 
 from keras import models
 from keras.models import model_from_json
@@ -20,18 +21,11 @@ x = np.expand_dims(x, axis=0)
 # 予測
 features = model.predict(x)
 
-print(features)
+print(features[0,0], features[0,1])
 
-# 予測結果によって処理を分ける
-if features[0, 0] == 1:
+# 予測結果によって処理を分けるd
+if features[0, 0] > features[0, 1] :
     print("曲がった髪が選ばれました")
-
-elif features[0, 1] == 1:
+else:
     print("きれいな紙が選ばれました")
 
-else:
-    for i in range(0, 10):
-        if features[0, i] == 1:
-            cat = categories[i]
-    message = "綾鷹を選んでください。（もしかして：あなたが選んでいるのは「" + cat + "」ではありませんか？）"
-    print(message)
