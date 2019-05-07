@@ -94,10 +94,10 @@ plt.savefig('損失値を示すグラフのファイル名')
 #モデルの保存
 
 json_string = model.model.to_json()
-open('tea_predict.json', 'w').write(json_string)
+open('paper_predict.json', 'w').write(json_string)
 
 #重みの保存
 
-hdf5_file = "tea_predict.hdf5"
+hdf5_file = "paper_predict.hdf5"
 model.model.save_weights(hdf5_file)
 

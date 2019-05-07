@@ -9,8 +9,7 @@ model = model_from_json(open('保存先のフォルダ/tea_predict.json').read()
 #保存した重みの読み込み
 model.load_weights('保存先のフォルダ/tea_predict.hdf5')
 
-categories = ["綾鷹","お〜いお茶　抹茶入り","なごみ","お〜いお茶　新茶","綾鷹　茶葉のあまみ",
-              "お〜いお茶","伊右衛門","お〜いお茶　濃い茶","生茶","お〜いお茶　新緑"]
+categories = ["daisy","dandelion","roses","sunflowers","tulips"]
 
 #画像を読み込む
 img_path = str(input())
