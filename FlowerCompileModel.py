@@ -57,7 +57,7 @@ y_test  = np_utils.to_categorical(y_test, nb_classes)
 
 model = model.fit(X_train,
                   y_train,
-                  epochs=10,
+                  epochs=30,
                   batch_size=6,
                   validation_data=(X_test,y_test))
 

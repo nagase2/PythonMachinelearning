@@ -31,7 +31,7 @@ def add_sample(cat, fname):
     img = Image.open(fname)
     img = img.convert("RGB")
     img = img.resize((300, 300))
-    print("saved ",fname)
+    #print("saved ",fname)
     # img.show()
     data = np.asarray(img)
     X.append(data)
@@ -55,7 +55,6 @@ test  = allfiles[th:]
 X_train, y_train = make_sample(train)
 X_test, y_test = make_sample(test)
 xy = (X_train, X_test, y_train, y_test)
-#データを保存する（データの名前を「tea_data.npy」としている）
 
 # print(X_train)
 
